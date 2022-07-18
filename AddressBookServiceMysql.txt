@@ -165,6 +165,44 @@ mysql> select *  from address_book ;
 +------------+--------------+------------+-----------+-----------+----------+--------------+-------------------+
 4 rows in set (0.00 sec)
 ------------------------------------------------------------------------------------------------------------------------
+UC-6 :retrieve person belonging to city or state.
+
+commands used :
+1.select *from address_book where city = 'ongole';
+2.select * from address_book where state = 'karnataka';
+3.select * from address_book where city = 'ongole' or state = 'karnataka';
+---------------------------------
+view in mysql :
+
+mysql> select *from address_book where city = 'ongole';
++------------+------------+------------+--------+--------+----------+--------------+-------------------+
+| first_name | last_name  | address    | city   | state  | zip_code | phone_number | email             |
++------------+------------+------------+--------+--------+----------+--------------+-------------------+
+| manoj      | pabbisetty | gandhiroad | ongole | andhra |   523001 |    701316729 | manoj@gamil.com   |
+| sandeep    | pabbisetty | gandhiroad | ongole | andhra |   523001 |     91213107 | sandeep@gamil.com |
++------------+------------+------------+--------+--------+----------+--------------+-------------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from address_book where state = 'karnataka';
++------------+-----------+------------+-----------+-----------+----------+--------------+------------------+
+| first_name | last_name | address    | city      | state     | zip_code | phone_number | email            |
++------------+-----------+------------+-----------+-----------+----------+--------------+------------------+
+| girish     | kumar     | whitefield | bangalore | karnataka |   523001 |     88865200 | girish@gamil.com |
++------------+-----------+------------+-----------+-----------+----------+--------------+------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from address_book where city = 'ongole' or state = 'karnataka';
++------------+------------+------------+-----------+-----------+----------+--------------+-------------------+
+| first_name | last_name  | address    | city      | state     | zip_code | phone_number | email             |
++------------+------------+------------+-----------+-----------+----------+--------------+-------------------+
+| manoj      | pabbisetty | gandhiroad | ongole    | andhra    |   523001 |    701316729 | manoj@gamil.com   |
+| sandeep    | pabbisetty | gandhiroad | ongole    | andhra    |   523001 |     91213107 | sandeep@gamil.com |
+| girish     | kumar      | whitefield | bangalore | karnataka |   523001 |     88865200 | girish@gamil.com  |
++------------+------------+------------+-----------+-----------+----------+--------------+-------------------+
+3 rows in set (0.00 sec)
+------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 
