@@ -264,6 +264,40 @@ mysql> select last_name,city from address_book order by city asc;
 +--------------+-----------+
 4 rows in set (0.00 sec)
 ------------------------------------------------------------------------------------------------------------------------
+UC-9 : add type in address book like friends and family.
+
+commands used :
+1.alter table address_book add type varchar(50);
+2.update address_book set type = 'family' where last_name = 'pabbisetty';
+3.update address_book set type = 'friends' where first_name = 'girish' or first_name = 'ganesh';
+----------------------------------------------
+view in mysql :
+
+mysql> alter table address_book add type varchar(50);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update address_book set type = 'family' where last_name = 'pabbisetty';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update address_book set type = 'friends' where first_name = 'girish' or first_name = 'ganesh';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from address_book;
++------------+--------------+------------+-----------+-----------+----------+--------------+-------------------+---------+
+| first_name | last_name    | address    | city      | state     | zip_code | phone_number | email             | type    |
++------------+--------------+------------+-----------+-----------+----------+--------------+-------------------+---------+
+| manoj      | pabbisetty   | gandhiroad | ongole    | andhra    |   523001 |    701316729 | manoj@gamil.com   | family  |
+| sandeep    | pabbisetty   | gandhiroad | ongole    | andhra    |   523001 |     91213107 | sandeep@gamil.com | family  |
+| ganesh     | kanamrlapudi | kphb       | hyderabad | telangana |   523001 |     98855142 | ganesh@gamil.com  | friends |
+| girish     | kumar        | whitefield | bangalore | karnataka |   523001 |     88865200 | girish@gamil.com  | friends |
++------------+--------------+------------+-----------+-----------+----------+--------------+-------------------+---------+
+4 rows in set (0.00 sec)
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 
