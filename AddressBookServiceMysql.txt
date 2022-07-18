@@ -296,6 +296,33 @@ mysql> select * from address_book;
 +------------+--------------+------------+-----------+-----------+----------+--------------+-------------------+---------+
 4 rows in set (0.00 sec)
 --------------------------------------------------------------------------------------------------------------------------------------
+UC-10 : to get number of persons in each type
+
+commands used :
+1.select count(first_name) from address_book where type= 'family';
+2.select count(first_name) from address_book where type = 'friends';
+----------------------------------------------------------
+
+view in mysql:
+
+mysql> select count(first_name) from address_book where type= 'family';
++-------------------+
+| count(first_name) |
++-------------------+
+|                 2 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select count(first_name) from address_book where type= 'friends';
++-------------------+
+| count(first_name) |
++-------------------+
+|                 2 |
++-------------------+
+1 row in set (0.00 sec)
+------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 
