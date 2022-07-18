@@ -234,6 +234,37 @@ mysql> select count(first_name) from address_book where city = 'ongole' or state
 +-------------------+
 1 row in set (0.00 sec)
 ------------------------------------------------------------------------------------------------------------------------
+UC-8 : in a given city sort names of persons alphabetically.
+
+commands used :
+1.select first_name,city from address_book order by first_name asc;
+2.select last_name,city from address_book order by city asc;
+---------------------------------------
+view in mysql :
+
+mysql> select first_name,city from address_book order by first_name asc;
++------------+-----------+
+| first_name | city      |
++------------+-----------+
+| ganesh     | hyderabad |
+| girish     | bangalore |
+| manoj      | ongole    |
+| sandeep    | ongole    |
++------------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select last_name,city from address_book order by city asc;
++--------------+-----------+
+| last_name    | city      |
++--------------+-----------+
+| kumar        | bangalore |
+| kanamrlapudi | hyderabad |
+| pabbisetty   | ongole    |
+| pabbisetty   | ongole    |
++--------------+-----------+
+4 rows in set (0.00 sec)
+------------------------------------------------------------------------------------------------------------------------
+
 
 
 
