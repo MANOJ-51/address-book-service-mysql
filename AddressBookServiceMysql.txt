@@ -38,3 +38,51 @@ mysql> select database();
 +----------------------+
 1 row in set (0.00 sec)
 ------------------------------------------------------------------------------------------------------------------------
+UC-2 : create table .
+
+commands used:
+1.create table address_book
+(
+first_name varchar(50) not null ,
+last_name varchar(50) not null,
+address varchar(150) not null,
+city varchar(50) not null,
+state varchar(50) not null,
+zip_code int not null,
+phone_number int not null,
+email varchar(50) not null
+);
+-----------------------------------
+view in mysql :
+
+mysql> create table address_book
+    -> (
+    -> first_name varchar(50) not null ,
+    -> last_name varchar(50) not null,
+    -> address varchar(150) not null,
+    -> city varchar(50) not null,
+    -> state varchar(50) not null,
+    -> zip_code int not null,
+    -> phone_number int not null,
+    -> email varchar(50) not null
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> describe address_book;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| first_name   | varchar(50)  | NO   |     | NULL    |       |
+| last_name    | varchar(50)  | NO   |     | NULL    |       |
+| address      | varchar(150) | NO   |     | NULL    |       |
+| city         | varchar(50)  | NO   |     | NULL    |       |
+| state        | varchar(50)  | NO   |     | NULL    |       |
+| zip_code     | int          | NO   |     | NULL    |       |
+| phone_number | int          | NO   |     | NULL    |       |
+| email        | varchar(50)  | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+------------------------------------------------------------------------------------------------------------------------
+
+
