@@ -118,6 +118,34 @@ mysql> select * from address_book;
 5 rows in set (0.00 sec)
 
 ------------------------------------------------------------------------------------------------------------------------
+UC-4 :edit existing contact by name.
+
+commands used :
+1.update address_book set state = 'andhra' where first_name = 'manoj' or first_name= 'sandeep';
+
+---------------------------
+view in mysql :
+
+mysql> update address_book set state = 'andhra' where first_name = 'manoj' or first_name= 'sandeep';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from adderss_book;
+ERROR 1146 (42S02): Table 'address_book_service.adderss_book' doesn't exist
+mysql> select * from address_book;
++------------+--------------+------------+-----------+-----------+----------+--------------+-------------------+
+| first_name | last_name    | address    | city      | state     | zip_code | phone_number | email             |
++------------+--------------+------------+-----------+-----------+----------+--------------+-------------------+
+| manoj      | pabbisetty   | gandhiroad | ongole    | andhra    |   523001 |    701316729 | manoj@gamil.com   |
+| sandeep    | pabbisetty   | gandhiroad | ongole    | andhra    |   523001 |     91213107 | sandeep@gamil.com |
+| ganesh     | kanamrlapudi | kphb       | hyderabad | telangana |   523001 |     98855142 | ganesh@gamil.com  |
+| girish     | kumar        | whitefield | bangalore | karnataka |   523001 |     88865200 | girish@gamil.com  |
+| sairam     | thavva       | bhel       | hyderabad | telangana |   523001 |     83318800 | sairam@gamil.com  |
++------------+--------------+------------+-----------+-----------+----------+--------------+-------------------+
+5 rows in set (0.00 sec)
+------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 
