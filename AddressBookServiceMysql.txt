@@ -321,6 +321,31 @@ mysql> select count(first_name) from address_book where type= 'friends';
 +-------------------+
 1 row in set (0.00 sec)
 ------------------------------------------------------------------------------------------------------------------------
+UC-11:to a person in both friends and family type .
+
+commands used :
+1.insert into address_book (first_name,last_name,address,city,state,zip_code,phone_number,email,type) values
+('ganesh','kanamarlapudi','kphb','hyderabad','telangana',523002,54621435,'ganesh@gmail.com','family');
+-----------------------------------------------
+view in mysql :
+
+mysql> insert into address_book (first_name,last_name,address,city,state,zip_code,phone_number,email,type) values
+    -> ('ganesh','kanamarlapudi','kphb','hyderabad','telangana',523002,54621435,'ganesh@gmail.com','family');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from address_book;
++------------+---------------+------------+-----------+-----------+----------+--------------+-------------------+---------+
+| first_name | last_name     | address    | city      | state     | zip_code | phone_number | email             | type    |
++------------+---------------+------------+-----------+-----------+----------+--------------+-------------------+---------+
+| manoj      | pabbisetty    | gandhiroad | ongole    | andhra    |   523001 |    701316729 | manoj@gamil.com   | family  |
+| sandeep    | pabbisetty    | gandhiroad | ongole    | andhra    |   523001 |     91213107 | sandeep@gamil.com | family  |
+| ganesh     | kanamrlapudi  | kphb       | hyderabad | telangana |   523001 |     98855142 | ganesh@gamil.com  | friends |
+| girish     | kumar         | whitefield | bangalore | karnataka |   523001 |     88865200 | girish@gamil.com  | friends |
+| ganesh     | kanamarlapudi | kphb       | hyderabad | telangana |   523002 |     54621435 | ganesh@gmail.com  | family  |
++------------+---------------+------------+-----------+-----------+----------+--------------+-------------------+---------+
+5 rows in set (0.00 sec)
+----------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
