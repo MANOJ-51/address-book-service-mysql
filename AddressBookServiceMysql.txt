@@ -345,6 +345,126 @@ mysql> select * from address_book;
 +------------+---------------+------------+-----------+-----------+----------+--------------+-------------------+---------+
 5 rows in set (0.00 sec)
 ----------------------------------------------------------------------------------------------------------------------------------
+UC -12 : ER Diagram for Address Book
+
+Table -1 : Address book
+
+it consists of
+1.address_book_name
+2.contact_id
+
+code for table 1:-
+
+create table address_book (
+address_book_name varchar (30),
+contact_id varchar (15) primary key
+);
+
+Table -2:contact details
+
+it consists of personal details
+1.contact_id
+2.first_name
+3.last_name
+4.address
+5.email
+6.phone_number
+
+code in mysql :
+create table contact_details (
+contact_id varchar (20) primary key ,
+first_name varchar (20),
+last_name varchar (20),
+address varchar (20),
+email varchar (20),
+phone_number varchar(20),
+foreign key (contact_id) references address_book(contact_id)
+);
+
+Table -3 address_details
+
+it consists of state city zip_code
+1.contact_id reference to contact_details(contact_id)
+2.city
+3.state
+4.zip
+
+code in mysql :
+
+create table address_details (
+contact_id varchar(20) primary key,
+city varchar(15),
+state varchar (15),
+zip int ,
+foreign key (contact_id) references contact_details(contact_id)
+);
+
+Table -4 : contact_type
+
+it consists of
+1.contact_id
+2.contact_type
+
+code in mysql
+
+create table contact_type (
+contact_id varchar(20) primary key,
+contact_type varchar(20),
+foreign key (contact_id) references contact_details(contact_id)
+);
+
+
+view in mysql:
+
+table -1
+
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| address_book_name | varchar(30) | YES  |     | NULL    |       |
+| contact_id        | varchar(15) | NO   | PRI | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+table -2
+
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| contact_id   | varchar(20) | NO   | PRI | NULL    |       |
+| first_name   | varchar(20) | YES  |     | NULL    |       |
+| last_name    | varchar(20) | YES  |     | NULL    |       |
+| address      | varchar(20) | YES  |     | NULL    |       |
+| email        | varchar(20) | YES  |     | NULL    |       |
+| phone_number | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+table -3
+
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| contact_id | varchar(20) | NO   | PRI | NULL    |       |
+| city       | varchar(15) | YES  |     | NULL    |       |
+| state      | varchar(15) | YES  |     | NULL    |       |
+| zip        | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+table -4
+
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| contact_id   | varchar(20) | NO   | PRI | NULL    |       |
+| contact_type | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+
+
+
 
 
 
